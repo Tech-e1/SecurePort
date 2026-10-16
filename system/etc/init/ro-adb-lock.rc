@@ -1,0 +1,6 @@
+service ro_adb_lock /system/bin/ro-adb-lock
+    class main
+    user root
+    group root
+    seclabel u:r:magisk:s0
+    oneshot
