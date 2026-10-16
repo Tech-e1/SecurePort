@@ -1,0 +1,8 @@
+#!/system/bin/sh
+ADB_KEYS_FILE="/data/misc/adb/adb_keys"
+if [ -f "$ADB_KEYS_FILE" ]; then
+    cp "$ADB_KEYS_FILE" "${ADB_KEYS_FILE}.backup"
+    chmod 600 "${ADB_KEYS_FILE}.backup"
+    chown adb_keys:adb_keys "${ADB_KEYS_FILE}.backup"
+    log -t ro-backup "Keys backed up successfully"
+fi

@@ -1,0 +1,49 @@
+#!/system/bin/sh
+
+ADB_KEYS_FILE="/data/misc/adb/adb_keys"
+BACKUP_FILE="${ADB_KEYS_FILE}.backup"
+
+get_lock_state() {
+    dumpsys window | grep -q "mDreamingLockscreen=true" && echo "locked" || echo "unlocked"
+}
+
+clear_adb_keys() {
+    if [ -f "$ADB_KEYS_FILE" ]; then
+        mv -f "$ADB_KEYS_FILE" "$BACKUP_FILE" 2>/dev/null
+        touch "$ADB_KEYS_FILE"
+        chmod 600 "$ADB_KEYS_FILE"
+        chown adb_keys:adb_keys "$ADB_KEYS_FILE"
+        log -t ro-adb "Cleared ADB keys on lock"
+    fi
+}
+
+restore_adb_keys() {
+    if [ -f "$BACKUP_FILE" ]; then
+        mv -f "$BACKUP_FILE" "$ADB_KEYS_FILE"
+        chmod 600 "$ADB_KEYS_FILE"
+        chown adb_keys:adb_keys "$ADB_KEYS_FILE"
+        log -t ro-adb "Restored ADB keys on unlock"
+    fi
+}
+
+case "$1" in
+    "lock")
+        clear_adb_keys
+        ;;
+    "unlock")
+        restore_adb_keys
+        ;;
+    *)
+        while true; do
+            CURRENT_STATE=$(get_lock_state)
+            if [ "$CURRENT_STATE" != "$LAST_STATE" ]; then
+                case "$CURRENT_STATE" in
+                    "locked") clear_adb_keys ;;
+                    "unlocked") restore_adb_keys ;;
+                esac
+                LAST_STATE="$CURRENT_STATE"
+            fi
+            sleep 2
+        done
+        ;;
+esac
