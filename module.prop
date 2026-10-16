@@ -1,0 +1,7 @@
+id=RO_adb_lock
+name=RO ADB Lock Protection
+version=1.0
+versionCode=1
+author=Anonymous
+description=Restricts ADB/MTP access based on lock state
+minMagiskVersion=23000
