@@ -5,19 +5,11 @@ SecurePort
 ### Table of Contents
 You're sections headers will be used to reference location of destination.
 
-- [Description](#description)
-- [Dependencies](#dependencies)
-- [How To Use](#how-to-use)
-- [References](#references)
-- [License](#license)
-
 ---
 
 ## Description
 
-A root module inspired by the pixel line of usb security found commonly on GrapheneOS. It is designed to disable developer options entirely while device is in locked state.
-
-[Back To The Top](#read-me-template)
+A root module inspired by the pixel line of usb security found commonly on GrapheneOS. It is designed to disable developer options entirely while device is in locked state
 
 ---
 
@@ -28,8 +20,6 @@ A root module inspired by the pixel line of usb security found commonly on Graph
 Save this repo as zip\
 Flash on rooted device in root manager of choice\
 Reboot
-
-[Back To The Top](#read-me-template)
 
 ---
 
