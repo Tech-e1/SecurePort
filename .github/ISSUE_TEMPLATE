@@ -1,0 +1,30 @@
+---
+name: Bug Report
+about: Report a bug or issue with RO_adb_lock
+title: '[BUG] '
+labels: bug
+assignees: ''
+---
+
+## Device Information
+- **Device Model:** 
+- **Android Version:** 
+- **ROM (Stock/Custom):** 
+- **Root Method:** (Magisk / KernelSU / APatch)
+- **Module Version:** 
+
+## Description
+Describe the issue clearly.
+
+## Expected Behavior
+What should happen?
+
+## Actual Behavior
+What actually happens?
+
+## Steps to Reproduce
+1. 
+2. 
+3. 
+
+## Logs
