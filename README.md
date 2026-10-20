@@ -4,10 +4,7 @@ SecurePort
 
 ## Description
 
-A root module inspired by the pixel line of usb security found commonly on GrapheneOS. It is designed to disable developer options entirely while device is in locked state
-
----
-
+A root module inspired by the pixel line of usb security found commonly on GrapheneOS. It is designed to disable developer options entirely while device is in locked state. *MTP protection recently added at the software level. The module should run at first boot.
 
 ---
 
@@ -17,6 +14,8 @@ Flash on rooted device in root manager of choice\
 Reboot
 
 ---
+#### Contribute
+We are in need of testers to verify this works for a wide variety of OEM and OS types. Once enough users confirm viability, the next step is publishing to a Magisk Repo such as Alt-repo
 
 
 ## License
@@ -45,5 +44,3 @@ your programs, too.
 [Back To The Top](#read-me-template)
 
 -
-
-[Back To The Top](#read-me-template)
