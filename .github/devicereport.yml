@@ -1,0 +1,72 @@
+name: Device Compatibility Report
+description: Report that RO_adb_lock works (or doesn't) on your device
+title: '[DEVICE] '
+labels: [device-testing]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device Model
+      placeholder: e.g., Pixel 8 Pro
+    validations:
+      required: true
+
+  - type: input
+    id: android_version
+    attributes:
+      label: Android Version
+      placeholder: e.g., Android 16
+    validations:
+      required: true
+
+  - type: input
+    id: rom
+    attributes:
+      label: ROM Name/Version
+      placeholder: e.g., Stock GrapheneOS
+    validations:
+      required: true
+
+  - type: dropdown
+    id: root_method
+    attributes:
+      label: Root Method
+      options:
+        - Magisk
+        - KernelSU
+        - APatch
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: adb_status
+    attributes:
+      label: ADB Disables When Locked?
+      options:
+        - Yes, works perfectly
+        - Sometimes fails
+        - No, doesn't work
+        - Not tested
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mtp_status
+    attributes:
+      label: MTP Disables When Locked?
+      options:
+        - Yes, works perfectly
+        - Sometimes fails
+        - No, doesn't work
+        - Not tested
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any quirks or issues?
+    validations:
+      required: false
