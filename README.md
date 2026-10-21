@@ -21,60 +21,8 @@ We are in need of testers to verify this works for a wide variety of OEM and OS 
 ----
 #### Best Practices
 
-┌─────────────────────────────────────────────────────────────────┐
-│              LAYERED USB-C SECURITY STACK                        │
-└─────────────────────────────────────────────────────────────────┘
+<img width="453" height="853" alt="USBC" src="https://github.com/user-attachments/assets/d90aacd2-b409-40c1-940a-fa190ef276bf" />
 
-┌─────────────────────────────────────────────────────────────────┐
-│  Layer 4: Physical Security                                     │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │  • Device kept on person / in secure location             │  │
-│  │  • Tamper-evident seals                                   │  │
-│  │  • Physical USB-C port lock installed                     │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                              │                                  │
-│                              ▼                                  │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │  Layer 3: Hardware Protection                             │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │  Physical USB-C Port Lock                           │  │  │
-│  │  │  • Prevents unauthorized cable insertion            │  │  │
-│  │  │  • Requires special key/tool to remove              │  │  │
-│  │  │  • Tamper-evident (visible if removed)              │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                              │                                  │
-│                              ▼                                  │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │  Layer 2: Bootloader Protection                           │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │  • Bootloader locked (if possible)                  │  │  │
-│  │  │  • Verified Boot enabled                            │  │  │
-│  │  │  • Custom recovery blocked                          │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                              │                                  │
-│                              ▼                                  │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │  Layer 1: Android Runtime Protection                      │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │  SecurePort / RO_adb_lock Module                    │  │  │
-│  │  │  • ADB disabled when screen locked                  │  │  │
-│  │  │  • MTP disabled when screen locked                  │  │  │
-│  │  │  • Automatic re-enable when unlocked                │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                              │                                  │
-│                              ▼                                  │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │  Layer 0: Data Protection                                 │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │  • Full disk encryption enabled                     │  │  │
-│  │  │  • Strong lock screen PIN/password                  │  │  │
-│  │  │  • Biometric authentication                         │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
 
 Few devices may be able to excel in Layer 2 but a combination of the others can be meaningful.
 
